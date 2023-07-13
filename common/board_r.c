@@ -658,9 +658,6 @@ static int should_load_env(void)
 static int initr_env(void)
 {
 	/* initialize environment */
-	printk("=============YTR=====initr_env====\n");
-
-   printf("=============YTR=====initr_env====\n");
 	if (should_load_env())
 		env_relocate();
 	else
@@ -848,8 +845,6 @@ static int initr_bedbug(void)
 
 static int run_main_loop(void)
 {
-	printf("=============YTR=====initr_env====\n");
-
 #ifdef CONFIG_SANDBOX
 	sandbox_main_loop_init();
 #endif
