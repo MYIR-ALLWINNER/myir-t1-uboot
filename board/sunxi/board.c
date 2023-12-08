@@ -197,6 +197,13 @@ int board_init(void)
 {
 	__maybe_unused int id_pfr1, ret, satapwr_pin, macpwr_pin;
 
+#if 1
+	/*MYD YT8531 RESET*/
+	gpio_direction_output(SUNXI_GPE(11), 0);
+	udelay(10000);
+	gpio_direction_output(SUNXI_GPE(11), 1);
+#endif
+
 	gd->bd->bi_boot_params = (PHYS_SDRAM_0 + 0x100);
 
 	sunxi_plat_init();
