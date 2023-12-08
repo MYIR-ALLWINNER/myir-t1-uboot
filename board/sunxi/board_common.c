@@ -855,6 +855,15 @@ int sunxi_board_shutdown(void)
 	pmu_set_power_off();
 #endif
 	while (1) {
+		printf("*** Flash Success ***\n");
+
+		/*MYD PE2 Blue LED*/
+		gpio_direction_output(SUNXI_GPE(2), 0);
+		udelay(1000000);
+		gpio_direction_output(SUNXI_GPE(2), 1);
+		udelay(1000000);
+
+
 		asm volatile ("wfi");
 	}
 	return 0;
