@@ -288,6 +288,14 @@ static s32 lcd_parse_panel_para(u32 disp, disp_panel_para *info, int compat_idx)
         info->lcd_lvds_mode = value;
     }
 
+	ret = lcd_sys_script_get_item(primary_key, "lcd_lvds_ab_reverse", &value, 1, compat_idx);
+	if (ret == 1)
+	{
+		info->lcd_lvds_ab_reverse = value;
+		printk("myir lcd_lvds_ab_reverse %u \n", info->lcd_lvds_ab_reverse);
+	}
+		
+
     ret = lcd_sys_script_get_item(primary_key, "lcd_lvds_colordepth", &value, 1, compat_idx);
     if (ret == 1)
     {

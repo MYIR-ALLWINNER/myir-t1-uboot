@@ -669,6 +669,8 @@ typedef struct {
 	disp_lcd_lvds_if         lcd_lvds_if;
 	disp_lcd_lvds_colordepth lcd_lvds_colordepth; //color depth, 0:8bit; 1:6bit
 	disp_lcd_lvds_mode       lcd_lvds_mode;
+
+	unsigned int 			 lcd_lvds_ab_reverse;
 	unsigned int             lcd_lvds_io_polarity;
 
 	disp_lcd_cpu_if          lcd_cpu_if;
